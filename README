@@ -1,0 +1,13 @@
+This folder contains the basic code to generate structured data from elite biographies scraped from Kazakhstani legal news and information site https://www.zakon.kz/. 
+
+`0. selenium_setup.R` initialises a Selenium-controlled Firefox instance using `RSelenium` and provides some helper functions for scrolling and error handling.
+
+`1. zakon_bio_links.R` finds and stores the links to Zakon's elites biographies by searching the website for 'персональная справка' and iterating through results pages. The links are stored in a .Rdata file in `links/`. 
+
+`2. zakon_bio_download.R` scrapes the biographies from the links found in `1. zakon_bio_links.R` and stores them as raw HTML files in `results/`
+
+`3. zakon_bio_csv.R` does some initial processing of the biographies, saving each person's name and the html of their biography into what becomes a large (~400mb) CSV file. 
+
+`3. zakon_structure.R` processes the html files, extracting biography sections from the HTML into a structured data frame. 
+
+`4. zakon_jobwise.R` provides code to split the work history sections of the biographies into a row-by-row (jobwise) format.
