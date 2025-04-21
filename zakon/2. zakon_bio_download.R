@@ -4,7 +4,7 @@ source("0. selenium_setup.R")
 # Store archive copies of all biographies ----
 
 # Load in saved list of urls
-list_loaded <- rlist::list.load("links/zakon_bio_links.RData")
+list_loaded <- rlist::list.load("zakon/links/zakon_bio_links.RData")
 
 # Iterate through list and save to html
 i <- 1
@@ -51,7 +51,7 @@ while (i <= length(list_loaded)) {
 
     # Save to html file
     store_name <- paste0(
-        "results/",
+        "zakon/results/",
         save_name,
         "_archive_04122024.html"
     )
@@ -59,7 +59,7 @@ while (i <= length(list_loaded)) {
     xml2::write_html(rvest::read_html(bio_html[[1]]), store_name)
 
     list_loaded <- rlist::list.load(
-        "links/zakon_bio_links.RData"
+        "zakon/links/zakon_bio_links.RData"
     )
 
     i <- i + 1

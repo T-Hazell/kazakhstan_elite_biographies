@@ -1,5 +1,5 @@
 if (!exists("all_zakon")) {
-    source("3. zakon_structure.R")
+    source("zakon/3. zakon_structure.R")
 }
 
 zakon_filtered <- all_zakon |>

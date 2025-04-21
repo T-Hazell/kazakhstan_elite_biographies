@@ -1,5 +1,5 @@
 # Read in data ----
-file_list <- list.files("results/", full.names = TRUE)
+file_list <- list.files("zakon/results/", full.names = TRUE)
 
 ZakonReader <- function(file_name) {
     bio_i <- rvest::read_html(file_name, encoding = "UTF-8")
@@ -29,4 +29,4 @@ ZakonReader <- function(file_name) {
 all_zakon <- purrr::map(file_list, ZakonReader, .progress = TRUE) |>
     dplyr::bind_rows()
 
-readr::write_csv(all_zakon, "zakon_bios_date.csv")
+readr::write_csv(all_zakon, "zakon/zakon_bios_date.csv")

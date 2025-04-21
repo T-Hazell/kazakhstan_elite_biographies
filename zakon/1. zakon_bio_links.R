@@ -45,7 +45,7 @@ for (i in 1:301) {
 
   # Append to full list
   urls_full_list <- append(urls_full_list, link_urls_temp)
-  rlist::list.save(urls_full_list, "zakon-scraping/links/zakon_bio_links.RData")
+  rlist::list.save(urls_full_list, "zakon/links/zakon_bio_links.RData")
 
   print(paste(
     "Iteration",

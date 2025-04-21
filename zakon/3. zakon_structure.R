@@ -1,6 +1,6 @@
 # Read in data ----
 
-file_list <- list.files("zakon-scraping/zakon-results", full.names = TRUE)
+file_list <- list.files("zakon/results", full.names = TRUE)
 
 ZakonReader <- function(file_name) {
     bio_i <- rvest::read_html(file_name, encoding = "UTF-8")
